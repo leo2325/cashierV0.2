@@ -1,0 +1,51 @@
+/*   TOP NAV   */
+#topNav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 0 4em;
+    background-color: #EEDA4B;
+  }
+  .LogoCompany {
+    border-radius: 2em;
+  }
+  .LogoCompany img{
+    width: 80px;
+    height: 80px;
+    border-radius: 2em;
+    }
+
+    #toggleConnexionModule {
+      width: 8em;
+      padding: 16px;
+      text-align: center;
+    }
+    #userNav {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    #userNav img {
+      margin-left: 3em;
+      width: 4em;
+      height: 3em;
+    }
+    #topNav p {
+      font-size: 1.2em;
+      color: white;
+      text-shadow: 0 -5px 8px gainsboro;
+      text-decoration: underline #EEDA4B;
+      cursor: pointer;
+    }
+
+
+
+
+.rotate-effect {
+    animation: rotateAnimation .5s ease-out;
+}
+@keyframes rotateAnimation {
+    0% { transform: rotateX(0deg); }
+    100% { transform: rotateX(360deg);}
+}

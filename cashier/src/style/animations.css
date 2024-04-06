@@ -1,0 +1,17 @@
+/*  Animation glissement  */
+/*  Entrée glissement  */
+.scaleIn {
+    animation: scaleInAnimation .1s ease-in;
+  }
+  @keyframes scaleInAnimation {
+    0% { transform: scale(0, 0); }
+    100% { transform: scale(1, 1); }
+  }
+/*  Sortie  */
+  .scaleOut {
+    animation: scaleOutAnimation .1s ease-out;
+  }
+  @keyframes scaleOutAnimation {
+    0% { transform: scale(1, 1); }
+    100% { transform: scale(0, 0); }
+  }

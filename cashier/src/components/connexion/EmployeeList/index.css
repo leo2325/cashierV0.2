@@ -1,0 +1,71 @@
+.employeeList_container {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    
+    border-radius: 20px;
+    
+    height: 36em;
+    margin: 1em auto;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    box-shadow: -5px 5px 8px gainsboro;
+
+    background: rgb(220,241,255);
+    background: linear-gradient(45deg, rgba(220,241,255,1) 0%, rgba(222,230,255,1) 30%, rgba(250,234,255,1) 70%, rgba(220,241,255,1) 100%);
+}
+
+.logoUserCompany {
+    width: 3.5em;
+    height: 3.5em;
+    margin: 1em auto 0;
+    border-radius: 50%;
+    box-shadow: 0 -5px 8px gainsboro;
+    background-color: white;
+  }
+
+.employeeList_container ul{
+    margin: 0;
+    padding: 1.5em;
+    color: rgb(137, 188, 235);
+    overflow: scroll;
+}
+
+.employeeList_container li{
+    width: 7em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .5em;
+    padding: 1em .8em;
+    border-radius: .5em;
+    list-style: none;
+}
+
+/* classe background utilisateurs connectés */
+.whiteBackground {
+    background-color: white;
+    color: black;
+    box-shadow: -3px 3px 4px rgb(177, 177, 177);
+}
+.employeeList_container p{
+    font-size: .8em;
+    margin: 0;
+}
+
+.employeeList_container span {
+    font-size: .6em;
+}
+
+.userConnexionStatusLight_container {
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+}
+.userConnectedLight_container {
+    box-shadow: -2px -2px 1em #1eff00;
+    background-color: #00ff0448;
+}

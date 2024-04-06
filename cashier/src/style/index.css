@@ -1,0 +1,136 @@
+@font-face {
+  font-family:"Heavitas";
+  src: url(./fonts/Heavitas.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  font-family: Heavitas;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+/*    MAIN CONTAINER   */
+#main_container {
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+/*   ORDER NAV   */
+#orderNav {
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #EEDA4B;
+  
+}
+  .orderNavLink {
+    width: 120px;
+    height: 120px;
+    padding: 16px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+  }
+  .orderNavImage {
+    width: 56px;
+    height: 56px;
+  }
+    .orderNavLink:hover .orderNavImage {
+      width: 70px;
+      height: 70px;
+    }
+  .orderNavTitle {
+    color: white;
+    margin: 0;
+    font-size: 20px;
+  }
+    .orderNavLink:hover .orderNavTitle {
+      font-size: 16px
+    }
+  
+
+/*   ORDER COMPONENTS   */
+.orderComponent_container {
+  width: 100%;
+}
+.orderComponent_container h2 {
+  width: 100%;
+  color: #F8AE3B;
+  border-radius: 20px;
+  padding: 8px auto 0;
+  text-align: center;
+  font-size: 32px;
+}
+  #woks_container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+.Wok_container {
+  width:40%;
+  margin: 40px;
+  border-radius: 20px;
+}
+
+
+.banner_underCategorysOrder {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+  text-decoration: none;
+}
+.banner_underCategorysOrder img {
+  border-radius: 20px;
+  width: 90%;
+}
+
+
+
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 24px;
+  grid-auto-rows: minmax(100px, auto);
+  padding: 24px;
+}
+.productContainer {
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+}
+.productContainer:hover{
+  background-color: #f2f2f2;
+}
+.productIcon {
+  width: 150px;
+  margin: 0 auto;
+}
+.productContainer div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 20px;
+  color: black;
+  margin: 0 auto;
+  padding: 0 8px;
+}
+.productName, .productPrice {
+  font-size: 12px;
+  padding: 0 8px;
+}
