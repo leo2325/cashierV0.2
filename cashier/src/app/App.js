@@ -1,14 +1,11 @@
-// Dans App.js
-
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import TopNav from '../components/navs/TopNav';
 import Home from '../components/Home';
-import EmployeeConnexionModule from '../pages/employeeConnexionModule';
+import MemberPage from '../pages/MemberPage';
 import { Provider } from 'react-redux';
 import { store } from '../app/store.js'; // Importez votre store Redux ici
-
 
 function App() {
   const [isConnexionModuleVisible, setConnexionModuleVisible] = useState(false);
@@ -27,14 +24,13 @@ function App() {
   };
 
   return (
-    
     <div className="App">
       <Provider store={store}> {/* Fournissez votre store Redux */}
         <BrowserRouter>
           <TopNav toggleConnexionModule={toggleConnexionModule} isLoggedIn={isLoggedIn} />
         
           <div id="main_container">
-            {isConnexionModuleVisible && <EmployeeConnexionModule onSuccessfulLogin={handleSuccessfulLogin} />}
+            {isConnexionModuleVisible && <MemberPage onSuccessfulLogin={handleSuccessfulLogin} />}
             <Routes>
               <Route path="/" element={<Home />} />
             </Routes>

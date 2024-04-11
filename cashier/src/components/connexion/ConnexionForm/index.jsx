@@ -1,13 +1,18 @@
+// Importez useState et useEffect si nécessaire
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { loginSuccess, loginFail } from '../../../redux/slices/userSlice';
 import { teamDatas } from '../../../datas/teamDatas';
 import logoCashierCompany from "../../../assets/logo/logoCashierCompany.png";
-import logInOutIcon from '../../../assets/logo/logInOutIcon.png';
+import logInOutIcon from '../../../assets/connexion/logInOutIcon.png';
+import { updateLoggedInUser } from '../../../redux/slices/userSlice';
+
 import './index.css';
 import '../../../style/animations.css';
 
-function ConnexionForm({ onSuccessfulLogin }) {
+function ConnexionForm({ onSuccessfulLogin, getTime, loggedInUser, selectedUser }) {
+    
+    // États locaux
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [formState, setFormState] = useState({
@@ -15,15 +20,13 @@ function ConnexionForm({ onSuccessfulLogin }) {
         showError: false,
         showSuccess: false
     });
+
     const dispatch = useDispatch();
+
     const loginSuccessStatus = useSelector(state => state.user.status === "SUCCEEDED");
     const loginFailStatus = useSelector(state => state.user.status === "FAILED");
-    const loggedInUser = useSelector(state => state.user.loggedInUser);
-    const loggedInUsers = useSelector(state => state.user.loggedInUsers);
-
 
     useEffect(() => {
-        
         if (loginSuccessStatus) {
             // Active l'effet de rotation
             setFormState(prevState => ({
@@ -32,6 +35,9 @@ function ConnexionForm({ onSuccessfulLogin }) {
                 showError: false,
                 showSuccess: true
             }));
+            // Réinitialiser les champs du formulaire après une connexion réussie
+            //  setUsername('');
+            //  setPassword('');
         } else {
             setFormState(prevState => ({
                 ...prevState,
@@ -39,21 +45,28 @@ function ConnexionForm({ onSuccessfulLogin }) {
                 showSuccess: false
             }));
         }
-    }, [loginSuccessStatus, loginFailStatus]);
+    }, [loginSuccessStatus, loginFailStatus, getTime]);
 
+    // Mettre à jour la valeur du champ 'username' lorsque selectedUser change
+    useEffect(() => {
+        if (selectedUser) {
+            setUsername(selectedUser.UserName);
+        }
+    }, [selectedUser]);
+
+    // Dans la fonction handleLogin
     const handleLogin = async (event) => {
         event.preventDefault();
         const user = teamDatas.find(user => user.UserName === username && user.Password === password);
         if (user) {
-            dispatch(loginSuccess(user)); 
+            dispatch(loginSuccess({ user, connexionTime: getTime() }));
             onSuccessfulLogin();
-            console.log('Utilisateurs connectés :', loggedInUsers);
-            console.log('loggedInUser ' + (loggedInUser ? loggedInUser.Name : 'User not logged in'));
-            console.log('loginSuccessStatus ' + loginSuccessStatus + '.');
         } else {
             dispatch(loginFail()); 
         }
     };
+    
+    
 
     return (
         <form id="connexionForm" onSubmit={handleLogin}>
@@ -85,7 +98,7 @@ function ConnexionForm({ onSuccessfulLogin }) {
 
             <input type="button" id="recoveringPasswordBtn" value="Forgot something ?" />
             
-            <button type="submit" name="submit" className="connectButton_container">
+            <button type="submit" name="submit" className="connexionButton_container">
                 <img src={logInOutIcon} className="logInOutIcon" alt='logInOutIcon'/>
             </button>    
             
@@ -97,7 +110,7 @@ function ConnexionForm({ onSuccessfulLogin }) {
                 )}
                 {loginSuccessStatus && (
                     <div className={`infoCardsUser ${formState.showSuccess ? "scaleIn" : ""}`}>
-                        <p className="successMessage">{loggedInUser.Name} connecté</p> 
+                        <p className="successMessage"> Hello {loggedInUser ? loggedInUser.UserName : 'User not logged in'}</p>
                     </div>
                 )}
             </div>   

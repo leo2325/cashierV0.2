@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import './index.css';
-import logoLantaWok from "../../assets/logo/logoLantaWok.jpeg";
+
+import actuTest from "../../assets/logo/actuTest.jpg";
+import actu2Test from "../../assets/logo/actu2Test.jpg";
+
 import logoCashierCompany from "../../assets/logo/logoCashierCompany.png";
 
+import toDoList from "../../assets/logo/toDoList.jpg";
+import PostIt from "./PostIt/index.jsx";
 function Home() {
 
     return (
@@ -18,29 +23,61 @@ function Home() {
             <div className="home_container">
                 <div className='modulesAppList'>
                     <ul>
-                        <li>
-                            <p>Start the Cashier</p>
+                        <li className='cashierModule_openingButton'>
+                            <p className='cashierOpeningButton'>Cashier</p>
+                            <div className='Actu3'>
+                            <img
+                                src={ toDoList }
+                                className='linkToDoList'
+                                alt="image de todo list"
+                            />
+                        </div>
                         </li>
-                        <li>
-                            <p>Checkout the day, the week, the ...</p>
+                        <li className='checkoutModule_OpeningButton'>
+                            <p>Checkout</p>
+                            <div className='Actu3'>
+                                <img
+                                    src={ toDoList }
+                                    className='linkToDoList'
+                                    alt="image de todo list"
+                                />
+                        </div>
                         </li>
-                        <li>
-                            <p>Change the Settings ?</p>
+                        <li className='settingsModule_openingButton'>
+                            <p>Settings</p>
+                            <div className='Actu3'>
+                                <img
+                                    src={ toDoList }
+                                    className='linkToDoList'
+                                    alt="image de todo list"
+                                />
+                        </div>
                         </li>
-                        <li>
-                            <p>Manage Manager !</p>
+                        <li className='statsModule_openingButton'>
+                            <p>Stats</p>
+                            <div className='Actu3'>
+                            <img
+                                src={ toDoList }
+                                className='linkToDoList'
+                                alt="icône stats"
+                            />
+                        </div>
                         </li>
                     </ul>
                 </div>
+                
                 <div className='home_mainBottomContainer'>
+                    <PostIt/>
                     <div className='actuScreen'>
-                        <p>actu screen</p>
-                    </div>
-                    <div className='nameToChange'>
-                        <p>name to change</p>
+                        <div className='linkActu2_container'>
+                            <img
+                                src={ actuTest }
+                                className='linkActu2'
+                                alt="image de l'actu"
+                            />
+                        </div>
                     </div>
                 </div>
-
             </div>
         </div>
     );

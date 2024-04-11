@@ -5,8 +5,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 0 0 4em;
-    background-color: #EEDA4B;
-  }
+    background: rgb(238,218,75);
+    background: linear-gradient(45deg, rgba(238,218,75,1) 40%, rgba(249,197,4,1) 60%, rgba(255,171,5,1) 80%, rgba(255,143,8,1) 100%);  }
   .LogoCompany {
     border-radius: 2em;
   }

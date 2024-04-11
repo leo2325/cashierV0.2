@@ -1,11 +1,9 @@
 /*  Conteneur global  */
 #employeeConnexionModule {
-  width: 30em;
-  height: 100%;
-  box-shadow: -5px 5px 8px gainsboro;
+  width: 50%;
   border-bottom-left-radius: 1em;
-  background-color: #fffffff1;
-  padding-right: 1em;
+  background-color: #fffffff0;
+  padding: 1.5em 1.5em 2.5em;
   display: grid;
   grid-template-rows: 24em 13em;
   gap: 0;
@@ -13,6 +11,7 @@
   right: 0;
   z-index: 1000;
 }
+
 /*  Conteneur du formulaire  */
 #connexionForm {
   width: 16em;
@@ -39,8 +38,6 @@
   background-color: white;
 }
 
-
-
 /*  Champs du formulaire  */
 .edit-input{
   width: 70%;
@@ -56,19 +53,6 @@
   border-radius: 10px;
 }
 
-/*  Bouton de connexion  */
-  #connexionForm button { 
-  width: 4.5em;
-  height: 4.5em;  
-  background-color: #325BFF;
-  box-shadow: -3px 3px 4px rgb(177, 177, 177);
-  border: none;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center; 
-}
-
 /*  Bouton de récupération du mot de passe */
 #recoveringPasswordBtn {
   background-color: transparent;
@@ -76,6 +60,7 @@
   border: none; 
   padding: 1.2em;
   border-radius: 2em; 
+  cursor: pointer;
 }
 /*Survol*/
 #recoveringPasswordBtn:hover{
@@ -83,43 +68,45 @@
   font-weight: bolder;
 }
 
-/*  Bouton de déconnexion*/
+/*  Bouton de connexion*/
 /*  Conteneur icone de connexion  */
-.connectButton_container {
-  width: 4em;
-  height: 4em;
+.connexionButton_container {
+  width: 4.5em;
+  height: 4.5em;
+  background-color: #325BFF;
+  box-shadow: -3px 3px 4px rgb(177, 177, 177);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  cursor: pointer;
 }
-/*  Image icone de connexion  */
+/*  Image icon connexion  */
 .logInOutIcon {
   width: 3em;
   height: 3em;
 }
 
-
-/*  Message  */
-/*  erreur  */
-.errorMessage {
-  width: 100%;
-  font-size: .8em;
-  text-align: center;
-  color: #E120FF;
-  text-shadow: -3px 3px 3px gainsboro;
-}
-/*  succès  */
-.successMessage {
-  width: 100%;
-  font-size: .8em;
-  text-align: center;  
-  color: #1eff00;
-  text-shadow: -3px 3px 3px gainsboro;
-}
-
-
-
-
-
-.connexionTryStatus {
+/*  Messages de connexion  */
+/*  Message de connexion conteneur  */
+.connexionTryAnswer{
   width: 100%;
   height: 1em;
   text-align: center;
+}
+/*  Messages  */
+.errorMessage,.successMessage {
+  width: 100%;
+  font-size: .8em;
+  text-align: center;
+  text-shadow: -3px 3px 3px gainsboro;
+}
+/*  erreur  */
+.errorMessage {
+  color: #E120FF;
+}
+/*  succès  */
+.successMessage { 
+  color: #325BFF;
 }

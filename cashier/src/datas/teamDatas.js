@@ -8,8 +8,6 @@ export const teamDatas = [
         Password: "p",
         Pin: "0000",
         StartDate: "01/03/2024",
-        
-        IsConnected: "",
         ConnexionHour: "",
 
     },
@@ -19,11 +17,9 @@ export const teamDatas = [
         UserName: "Alfred",
         Title: "Manager",
         Mail: "Alfred@cashier.com",
-        Password: "Cashier",
+        Password: "",
         Pin: "0000",
         StartDate: "01/03/2024",
-        
-        IsConnected: "",
         ConnexionHour: "",    
     },
     {
@@ -32,11 +28,9 @@ export const teamDatas = [
         UserName: "Robin",
         Title: "Employee",
         Mail: "Robin@cashier.com",
-        Password: "Cashier",
+        Password: "p",
         Pin: "0000",
         StartDate: "01/03/2024",
-        
-        IsConnected: "",
         ConnexionHour: "",    
     },
     {
@@ -48,8 +42,6 @@ export const teamDatas = [
         Password: "p",
         Pin: "0000",
         StartDate: "01/03/2024",
-        
-        IsConnected: "",
         ConnexionHour: "",
 
     },
@@ -59,11 +51,9 @@ export const teamDatas = [
         UserName: "Freezer",
         Title: "Employee",
         Mail: "Freezer@cashier.com",
-        Password: "Cashier",
+        Password: "p",
         Pin: "0000",
         StartDate: "01/03/2024",
-        
-        IsConnected: "",
         ConnexionHour: "",    
     },
     {
@@ -72,11 +62,9 @@ export const teamDatas = [
         UserName: "Joker",
         Title: "Employee",
         Mail: "Joker@cashier.com",
-        Password: "Cashier",
+        Password: "p",
         Pin: "0000",
         StartDate: "01/03/2024",
-        
-        IsConnected: "",
         ConnexionHour: "",    
     },
     {
@@ -88,8 +76,6 @@ export const teamDatas = [
         Password: "p",
         Pin: "0000",
         StartDate: "01/03/2024",
-        
-        IsConnected: "",
         ConnexionHour: "",
 
     },
@@ -99,11 +85,9 @@ export const teamDatas = [
         UserName: "Eminem",
         Title: "Manager",
         Mail: "Eminem@cashier.com",
-        Password: "Cashier",
+        Password: "p",
         Pin: "0000",
         StartDate: "01/03/2024",
-        
-        IsConnected: "",
         ConnexionHour: "",    
     },
     {
@@ -112,11 +96,9 @@ export const teamDatas = [
         UserName: "Drake",
         Title: "Manager",
         Mail: "Drake@cashier.com",
-        Password: "Cashier",
+        Password: "p",
         Pin: "0000",
         StartDate: "01/03/2024",
-        
-        IsConnected: "",
         ConnexionHour: "",    
     },
     {
@@ -128,8 +110,6 @@ export const teamDatas = [
         Password: "p",
         Pin: "0000",
         StartDate: "01/03/2024",
-        
-        IsConnected: "",
         ConnexionHour: "",
     },
 ]

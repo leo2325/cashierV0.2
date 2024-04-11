@@ -40,7 +40,6 @@
   },
   "description": "Logiciel de caisse simple d'utilisation, destiné à être ajouté à une app plus technique.",
   "main": "index.js",
-  "devDependencies": {},
   "author": "",
   "license": "ISC"
 }

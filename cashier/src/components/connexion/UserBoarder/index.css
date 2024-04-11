@@ -1,0 +1,58 @@
+.userBoarder_container {
+    width: 16em;
+    height: 13em;
+    margin: 0 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -5px 5px 8px gainsboro;
+    border-radius: 20px; 
+    background-color: white;
+    background: rgb(220,241,255);
+    background: linear-gradient(45deg, rgba(220,241,255,1) 0%, rgba(222,230,255,1) 30%, rgba(250,234,255,1) 70%, rgba(220,241,255,1) 100%);
+}
+
+/*  Les infos utilisateur séléctionné  */
+.selectedUserStamp {
+    width: 15em;
+    font-size: .8em;
+}
+.selectedUserStamp p {
+    margin: .4em;
+}
+.dayDate { 
+    text-align: end;
+}
+
+/*  Les boutons  */
+.userBoarderButton_container {
+    width: 80%;
+    margin: 1em auto .5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+    .button {
+        width: 4.5em;
+        height: 4.5em;
+        border: none;
+        padding: 1em;
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        cursor: pointer;
+    }   
+        .disconnectUserButton {
+            background-color: #E120FF;
+            border-radius: 50%;
+            box-shadow: -3px 3px 4px rgb(177, 177, 177);
+        }
+        .checkUserProfil_button {
+            background-color: transparent;
+        }
+
+        .icon {
+                width: 3em;
+                height: 3em;
+        }
