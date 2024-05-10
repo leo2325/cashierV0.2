@@ -137,9 +137,11 @@
         .linkActu2_container {
         }
             .linkActu2 {
-                height: 26em;
+                height: 24em;
                 padding-right: 4em;
                 transform: rotate(2deg);
+                filter:
+                    drop-shadow( -4px 4px 8px black);
             }
 
 

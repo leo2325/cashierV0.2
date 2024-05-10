@@ -1,0 +1,25 @@
+/*  Conteneur global  */
+#userPage {
+  position: absolute;
+  right: 0;
+  z-index: 1000;
+  display: grid;
+  gap: 0;
+  height: 88.5%;
+  border-bottom-left-radius: 1em;
+  /*background-color: #fffffff0;*/
+  background: rgb(255,255,166);
+  background: linear-gradient(45deg, rgba(255,255,166,0.40242034313725494) 10%, rgba(166,255,222,0.40242034313725494) 26%, rgba(166,252,255,0.3996192226890757) 42%, rgba(221,166,255,0.40242034313725494) 58%, rgba(255,167,239,0.3968181022408963) 74%, rgba(255,166,166,0.40242034313725494) 90%);  
+}
+/*  classe appliqué lorsqu'un utilisateur est connecté  */
+.midUserPage {
+  width: 40%;
+  grid-template-rows: 55% 45%;
+  grid-template-columns: 55% 45%;
+}
+/*  classe appliquée lorsqu'un profil utilisateur est ouvert  */
+.fullUserPage {
+  width: 100%;
+  grid-template-rows: 55% 45%;
+  grid-template-columns: 20% 20% 60%;
+}

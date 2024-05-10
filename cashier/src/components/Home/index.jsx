@@ -1,12 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './index.css';
 
 import actuTest from "../../assets/logo/actuTest.jpg";
-import actu2Test from "../../assets/logo/actu2Test.jpg";
 
-import logoCashierCompany from "../../assets/logo/logoCashierCompany.png";
-
-import toDoList from "../../assets/logo/toDoList.jpg";
+import toDoList from "../../assets/logo/toDoListBackground.png";
 import PostIt from "./PostIt/index.jsx";
 function Home() {
 
@@ -29,7 +26,7 @@ function Home() {
                             <img
                                 src={ toDoList }
                                 className='linkToDoList'
-                                alt="image de todo list"
+                                alt="todo list"
                             />
                         </div>
                         </li>
@@ -39,7 +36,7 @@ function Home() {
                                 <img
                                     src={ toDoList }
                                     className='linkToDoList'
-                                    alt="image de todo list"
+                                    alt="todo list"
                                 />
                         </div>
                         </li>
@@ -49,7 +46,7 @@ function Home() {
                                 <img
                                     src={ toDoList }
                                     className='linkToDoList'
-                                    alt="image de todo list"
+                                    alt="todo list"
                                 />
                         </div>
                         </li>
@@ -72,8 +69,8 @@ function Home() {
                         <div className='linkActu2_container'>
                             <img
                                 src={ actuTest }
-                                className='linkActu2'
-                                alt="image de l'actu"
+                                className='linkActu2' 
+                                alt="actu"
                             />
                         </div>
                     </div>

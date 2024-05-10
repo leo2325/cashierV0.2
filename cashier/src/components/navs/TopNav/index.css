@@ -4,40 +4,35 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0 0 0 4em;
-    background: rgb(238,218,75);
-    background: linear-gradient(45deg, rgba(238,218,75,1) 40%, rgba(249,197,4,1) 60%, rgba(255,171,5,1) 80%, rgba(255,143,8,1) 100%);  }
-  .LogoCompany {
-    border-radius: 2em;
-  }
-  .LogoCompany img{
-    width: 80px;
-    height: 80px;
-    border-radius: 2em;
-    }
+    padding: 0 1em;
 
-    #toggleConnexionModule {
-      width: 8em;
-      padding: 16px;
-      text-align: center;
-    }
-    #userNav {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-    }
-    #userNav img {
-      margin-left: 3em;
-      width: 4em;
-      height: 3em;
-    }
-    #topNav p {
-      font-size: 1.2em;
-      color: white;
-      text-shadow: 0 -5px 8px gainsboro;
-      text-decoration: underline #EEDA4B;
-      cursor: pointer;
-    }
+    background: rgb(238,218,75);
+    background: linear-gradient(45deg, rgba(238,218,75,1) 40%, rgba(249,197,4,1) 60%, rgba(255,171,5,1) 80%, rgba(255,143,8,1) 100%);  
+}
+
+
+.LogoCompany {
+  border-radius: 2em;
+}
+.LogoCompany img{
+  width: 4em;
+  height: 4em;
+  border-radius: 2em;
+}
+
+#toggleConnexionModule {
+  width: 8em;
+  padding: 4px 0;
+  text-align: center;
+}
+#toggleConnexionModule p {
+  font-size: 1.2em;
+  cursor: pointer;
+  text-decoration: none;
+      
+  color: white;
+  text-shadow: 0 -5px 8px gainsboro; 
+}
 
 
 

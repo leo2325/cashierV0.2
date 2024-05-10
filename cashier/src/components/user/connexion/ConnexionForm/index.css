@@ -1,0 +1,107 @@
+/*  Conteneur du formulaire  */
+#connexionForm {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+
+  margin: .8em 0 0 .8em;
+  padding-top: 2em;
+  border-radius: 16px 0 0;
+
+  background-color: white;
+
+  /*
+  background: rgb(220,241,255);
+  background: linear-gradient(45deg, rgba(220,241,255,1) 0%, rgba(222,230,255,1) 30%, rgba(250,234,255,1) 70%, rgba(220,241,255,1) 100%);
+  box-shadow: -5px 5px 8px gainsboro;
+  */
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*  Champs du formulaire  */
+.edit-input{
+  width: 70%;
+  margin: 8px;
+  padding: 8px auto;
+}
+  .edit-input input{
+  width: 90%;
+  padding: 16px;
+  box-shadow: 0 -5px 8px gainsboro;
+  color: #325BFF;
+  border: none;
+  border-radius: 10px;
+}
+
+/*  Bouton de récupération du mot de passe */
+#recoveringPasswordBtn {
+  background-color: transparent;
+  color: #325BFF;
+  border: none; 
+  padding: 1.2em;
+  border-radius: 2em; 
+  cursor: pointer;
+}
+/*Survol*/
+#recoveringPasswordBtn:hover{
+  color: #E120FF;
+  font-weight: bolder;
+}
+
+/*  Bouton de connexion*/
+/*  Conteneur icone de connexion  */
+.connexionButton {
+  width: 50%;
+  margin: 1.6em 1.6em .8em;
+  border: none;
+  border-radius: 1.6em;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  font-weight: bolder;
+  cursor: pointer;
+  
+  box-shadow: 0 -5px 8px gainsboro;
+  color: white;
+}
+
+.loginButton{
+  background-color: #325BFF;
+}
+.logoutButton{
+  background-color: #ff329f;
+
+}
+
+
+/*  Messages de connexion  */
+/*  Message de connexion conteneur  */
+.connexionStatusScreen{
+  width: 100%;
+  text-shadow: -3px 3px 3px gainsboro;
+  text-align: center;
+  font-size: 1.2em;
+}
+/*  erreur  */
+.errorMessage {
+  color: #325BFF;
+}
+/*  succès  */
+.successMessage { 
+  color: #E120FF;
+}
+
+
+.zoomInOut {
+  animation: zoomInOut 2s ease-out;
+}
+@keyframes zoomInOut {
+  0% { transform: scale(0, 0); }
+  10% { transform: scale(1, 1); }
+  90% { transform: scale(1, 1); }
+  100% { transform: scale(0, 0); }
+}

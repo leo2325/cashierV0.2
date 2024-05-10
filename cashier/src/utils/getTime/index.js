@@ -4,4 +4,4 @@ export const getTime = () => {
     const minutes = now.getMinutes().toString().padStart(2, '0');
     const timeString = `${hours}:${minutes}`;
     return timeString;
-};
+}; 

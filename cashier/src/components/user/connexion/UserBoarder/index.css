@@ -1,0 +1,75 @@
+.userBoarder_container {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    margin: .4em 0 .8em .8em;
+    padding: .8em;
+    border-radius: 0 0 0 16px;
+    background-color: white;
+    /*
+    background: rgb(220,241,255);
+    background: linear-gradient(45deg, rgba(220,241,255,1) 0%, rgba(222,230,255,1) 30%, rgba(250,234,255,1) 70%, rgba(220,241,255,1) 100%);
+    box-shadow: -5px 5px 8px gainsboro;
+    */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+/*  Les infos utilisateur séléctionné  */
+.userPicture_container {
+    text-align: center;    
+    width: 100%;
+}
+.profilePicture {
+    width: 35%;
+    object-fit: cover;
+    border-radius: 50%;
+    align-self: center;
+}
+/*  Les infos utilisateur séléctionné  */
+.selectedUser {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: .8em;
+}
+.selectedUser p {
+    font-size: .8em;
+    margin: .4em;
+    color: #325BFF;
+}
+.selectedUserInfos span {
+    color: #E120FF;
+}
+/*  Les boutons  */
+.userBoarderButton_container {
+    width: 100%;
+    margin: 1em auto .5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.button {
+    width: 80%;
+    border: 2px solid #E120FF;
+    border-radius: 1.6em;
+    text-align: center; 
+    font-weight: bolder;
+    color: #E120FF;
+    cursor: pointer;
+}   
+
+
+
+
+.checkUserProfil_button {
+    background-color: transparent;
+}

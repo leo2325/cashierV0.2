@@ -18,7 +18,8 @@
         background-image: url("../../../assets/logo/toDoListBackground.png");
         background-size: contain;
         background-repeat: no-repeat;
-
+        filter:
+            drop-shadow( -4px 4px 8px black);
         display: flex;
         justify-content: center;
         align-items: center;

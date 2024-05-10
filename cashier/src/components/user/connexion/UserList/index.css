@@ -1,0 +1,79 @@
+.userList_container {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+   
+    margin: .8em .4em;
+
+    background-color: white;
+    
+    /*
+    background: rgb(220,241,255);
+    background: linear-gradient(45deg, rgba(220,241,255,1) 0%, rgba(222,230,255,1) 30%, rgba(250,234,255,1) 70%, rgba(220,241,255,1) 100%);
+    box-shadow: -5px 5px 8px gainsboro;
+    */
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+}
+
+.logoUserCompany {
+    width: 3.5em;
+    height: 3.5em;
+    margin: 1em auto .5em;
+    box-shadow: 0 -5px 8px gainsboro;
+    border-radius: 50%;
+    background-color: white;
+  }
+
+.userList_container ul{
+    margin: 0;
+    padding: 1.5em;
+    color: rgb(137, 188, 235);
+    overflow: scroll;
+}
+
+.userList_container li{
+    /*width: 7em;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .5em;
+    padding: 1em .8em;
+    border-radius: .5em;
+    list-style: none;
+}
+
+/*  classe background utilisateurs connectés ou séléctionnés  */
+
+/*  Utilisateurs connectés  */
+.connectedUserStyle {
+    background-color: white;
+    box-shadow: -3px 3px 4px rgb(177, 177, 177);
+    color: black;
+}
+/*  Utilisateur séléctionné  */
+.selectedUserStyle {
+    background-color: rgba(177, 219, 255, 0.979);
+}
+
+.userList_container p{
+    font-size: .8em;
+    margin: 0;
+}
+
+.userList_container span {
+    font-size: .6em;
+}
+
+.userConnexionStatusLight_container {
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+}
+.userConnectedLight_container {
+    box-shadow: -2px -2px 1em #1eff00;
+    background-color: #00ff0448;
+}
