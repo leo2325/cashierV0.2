@@ -2,22 +2,24 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Provider } from 'react-redux';
 import { store } from '../../app/store.js';
-import ConnexionForm from '../../components/user/connexion/ConnexionForm/index.jsx';
-import UserList from '../../components/user/connexion/UserList/index.jsx';
-import UserBoarder from '../../components/user/connexion/UserBoarder/index.jsx';
+import ConnexionForm from '../../components/user/ConnexionForm/index.jsx';
+import UserList from '../../components/user/UserList/index.jsx';
+import UserBoarder from '../../components/user/UserBoarder/index.jsx';
 import UserProfile from '../../components/user/UserProfile';
 import { getTime } from '../../utils/getTime/index.js';
 import './index.css';
 
 function UserPage() {
     const [isVisible, setIsVisible] = useState(true);
-
     const [selectedUser, setSelectedUser] = useState(null);
-    
-    const loggedInUser = useSelector(state => state.user.isLoggedIn);
-
     const [isProfileOpen, setIsProfileOpen] = useState(false); // État pour suivre si le profil utilisateur est ouvert
     const [userPageClass, setUserPageClass] = useState("midUserPage"); // État pour suivre la classe à appliquer à #userPage
+
+    const loggedInUser = useSelector(state => state.user.isLoggedIn);
+
+    const loggedInUsers = useSelector(state => state.user.loggedInUsers);
+    const loggedOutUser = useSelector(state => state.user.loggedOutUser); // Tableau utilisateurs connectés
+    const shiftUsers = useSelector(state => state.user.shiftUsers); // Tableau utilisateurs connectés
 
 
    
@@ -30,26 +32,36 @@ function UserPage() {
     return (
         <Provider store={store}>
             <div id="userPage" className={`${isVisible ? "slideIn" : "slideOut"} ${userPageClass}`}>
+               
                 <ConnexionForm 
                     user={selectedUser}
                     initialUsername={selectedUser ? selectedUser.UserName : ''}
                     getTime={getTime} 
                     loggedInUser={loggedInUser}
                     selectedUser={selectedUser}
+                    loggedInUsers={loggedInUsers}
+                    loggedOutUser={loggedOutUser}
+                    shiftUsers={shiftUsers}
                 />
+                
                 {loggedInUser && (
                     <UserList 
                         setSelectedUser={setSelectedUser} 
                         selectedUser={selectedUser} 
                         loggedInUser={loggedInUser}
+                        loggedInUsers={loggedInUsers}
                         openProfile={toggleProfile}
                     />
                 )}
-                {selectedUser && <UserBoarder 
+                
+                {selectedUser && 
+                    <UserBoarder 
                         user={selectedUser}
+                        loggedInUsers={loggedInUsers}
                         selectedUser={selectedUser} 
-                        openProfile={toggleProfile} // Passer la fonction toggleProfile à UserBoarder
+                        openProfile={toggleProfile}
                 />}
+                
                 {/* Conditionnellement afficher UserProfile en fonction de l'état isProfileOpen */}
                 {isProfileOpen && selectedUser && <UserProfile 
                     user={selectedUser}

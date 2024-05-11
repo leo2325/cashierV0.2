@@ -6,8 +6,42 @@ Possibilité pour l'utilisateur d'ajouter un bouton de caisse, automatisation du
 Tout le sysyème est basé sur les boutons. 
 
 
+# USERS :
+
+Datas : 
+    Dans cette version d'essai, une base de données fictive a été créée sous forme de tableau d'utilisateurs, dans le fichier teamDatas.js.
+    Chaque utilisateur possède les données suivantes : 
+        .ID : les id utilisateurs commencent toutes par 'OOO'. Les trois numéros suivants ('xxx'), désigne le point de vente auquel l'utilisateur est rattaché. Enfin les toris numéros suivants désigne son numéro personnel.
+        .Name : contient le nom et le prénom de l'utilisateur renseigné lors de son inscription.
+        .UserName : contient le nom choisi par l'utilisateur, qui sera utilisé par l'app pour le nommer.
+        .ProfilePicture : La photo de profil fournit par l'utilisateur (le nom de la photo de profil est alignée sur l'id utilisateur).
+        .Title : La position occuppé par l'utilisateur dans la société, lui donnant accès ou restriction à certaines fonctionnalités.
+        .Mail : "BruceWayne@cashier.com",
+        .Password : le code secret de connexion de l'utilisateur.
+        .Pin : un code secret de 4 chiffres, qui sera demandé à l'utilisateur afin de confirmer son accès à certains services.
+        .StartDate : renseigne le jour d'inscription de l'utilisateur.
+
+Tableaux : 
+    allUsers = [];
+    loggedInUsers = [];
+    checkedOutUsers = [];
+    
+Composants :
+    ConnexionForm
+    UserList
+    UserBoarder
+    UserProfile
 
 
+# ID : 
+Les id débutant par '000' désigne un utilisateur.
+Le chiffre suivant désigne le statut de l'utilisateur: 
+1 Owner
+2 Franchisé
+3 Manager
+4 Employee
+
+Les id débutant par '555' désigne un produit.
 
 
 

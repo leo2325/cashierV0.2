@@ -1,68 +1,39 @@
 import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { loginSuccess, loginFail, logout } from '../../../../redux/slices/userSlice';
-import { teamDatas } from '../../../../datas/teamDatas';
+import { useDispatch } from 'react-redux';
+import { loginSuccess, loginFail, logout } from '../../../slices/userSlice';
+import { teamDatas } from '../../../datas/teamDatas';
 import './index.css';
-import '../../../../style/animations.css';
+import '../../../style/animations.css';
 
-function ConnexionForm({ getTime, loggedInUser, selectedUser }) {
-   
+function ConnexionForm({ getTime, loggedInUser, loggedInUsers, selectedUser, loggedOutUser, shiftUsers }) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [formState, setFormState] = useState({
         showError: false,
         showSuccess: false
     });
-   
-    const [displayError, setDisplayError] = useState(false); // Nouvel état pour gérer l'affichage des erreurs
-    
     const dispatch = useDispatch();
 
-    const loggedInUsers = useSelector(state => state.user.loggedInUsers);
-    const loggedOutUser = useSelector(state => state.user.loggedOutUser); // Tableau utilisateurs connectés
-    const checkedOutUsers = useSelector(state => state.user.checkedOutUsers); // Tableau utilisateurs connectés
-
-    // Suppression du message d'erreur ou de succès au bout de 2 secondes.
+    // Suppression du message d'erreur/succès au bout de 2 secondes.
     useEffect(() => {
-        if (formState.showSuccess || formState.showError) {
+        if (formState.showSuccess || formState.showError || formState.showLogout ) {
             const timeoutId = setTimeout(() => {
                 setFormState(prevState => ({
                     ...prevState,
                     showSuccess: false,
-                    showError: false
+                    showError: false,
+                    showLogout: false
                 }));
-            }, 2000);
+            }, 1000);
             return () => clearTimeout(timeoutId);
         }
     }, [formState]);
-    // Remplissage automatiqeu de l'input du formulaire de la connexion, à la selection d'un utilisateur.
+    // Remplissage automatique de l'input du formulaire lors de la seléction d'un utilisateur.
     useEffect(() => {
         if (selectedUser) {
             setUsername(selectedUser.UserName);
         }
     }, [selectedUser]);
-
-    // ?????????????
-    const loginSuccessStatus = useSelector(state => state.user.status === "SUCCEEDED");
-    const loginFailStatus = useSelector(state => state.user.status === "FAILED");
-
-
-    //
-    useEffect(() => {
-        if (loginSuccessStatus) {
-            setFormState(prevState => ({
-                ...prevState,
-                showSuccess: true
-            }));
-        } else if (loginFailStatus && displayError) { // Afficher l'erreur seulement si displayError est true
-            setFormState(prevState => ({
-                ...prevState,
-                showError: true
-            }));
-            setDisplayError(false); // Désactiver l'affichage de l'erreur après l'avoir affichée
-        }
-    }, [loginSuccessStatus, loginFailStatus, displayError]);
-
 
     // Fonction de connexion.
     const handleLogin = async (event) => {
@@ -72,27 +43,35 @@ function ConnexionForm({ getTime, loggedInUser, selectedUser }) {
             dispatch(loginSuccess({ user: user, connexionTime: getTime() }));
             setUsername('');
             setPassword('');
-            console.log('loggedInUsers:', loggedInUsers);
-        } else {
+            console.log('loggedInUser:', loggedInUser);
+            setFormState(prevState => ({
+                ...prevState,
+                showSuccess: true
+            }));
+        } 
+        else if (!user) {
             dispatch(loginFail());
-            setDisplayError(true); // Activer l'affichage de l'erreur
+            setFormState(prevState => ({
+                ...prevState,
+                showError: true
+            }));
         }
-    };
+        else {
 
-    
+        }
+    }; 
     // Fonction de déconnexion.
     const handleLogout = async (event) => {
-        dispatch(logout({ user: selectedUser, logoutTime: getTime() }));        
+        dispatch(logout({ user: selectedUser, logoutTime: getTime() }));    
+        setUsername('');
+        setPassword('');
+        setFormState(prevState => ({
+            ...prevState,
+            showLogout: true
+        }));    
+        console.log('shiftUsers', shiftUsers);// très bien placé
     };
     
-    useEffect(() => {
-            console.log('checkedOutUsers:', checkedOutUsers);
-            console.log('loggedOutUser:', loggedOutUser);
-            console.log('loggedOutUser:', loggedOutUser);
-        }, [loggedInUsers, loggedOutUser, checkedOutUsers]);
-    
-   
-        
     return (
         <form id="connexionForm" onSubmit={handleLogin}>
             <div className="edit-input">
@@ -117,11 +96,11 @@ function ConnexionForm({ getTime, loggedInUser, selectedUser }) {
             </div>
 
             {selectedUser && loggedInUsers.some(user => user.UserName === selectedUser.UserName) ? (
-                <button type="submit" name="submit" className="connexionButton logoutButton" onClick={handleLogout}>
+                <button type="submit" name="logout" className="connexionButton logoutButton" onClick={handleLogout}>
                     <p>Logout</p>
                 </button>
             ) : (
-                <button type="submit" name="submit" className="connexionButton loginButton">
+                <button type="submit" name="login" className="connexionButton loginButton" onClick={handleLogin}>
                     <p>Login</p>
                 </button>
             )}
@@ -141,7 +120,7 @@ function ConnexionForm({ getTime, loggedInUser, selectedUser }) {
                 )}
                 {formState.showLogout && (
                     <div className={`infoCardsUser zoomInOut`}>
-                        <p className="successMessage"> Bye {loggedInUser ? loggedInUser.UserName : 'User is not logged out'}</p>
+                        <p className="logoutMessage"> Bye {loggedOutUser ? loggedOutUser.UserName : 'User is not logged out'}</p>
                     </div>
                 )}
             </div>  

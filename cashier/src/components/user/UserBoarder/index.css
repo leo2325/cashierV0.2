@@ -23,10 +23,10 @@
 /*  Les infos utilisateur séléctionné  */
 .userPicture_container {
     text-align: center;    
-    width: 100%;
 }
 .profilePicture {
-    width: 35%;
+    width: 6em;
+    height: 6em;
     object-fit: cover;
     border-radius: 50%;
     align-self: center;

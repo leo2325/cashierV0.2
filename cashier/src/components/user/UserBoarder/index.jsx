@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import DayDate from '../../../../utils/getDayDate';
+import DayDate from '../../../utils/getDayDate';
 import './index.css';
 
-import { useSelector } from 'react-redux';
-
-const UserBoarder = ({ user, selectedUser, openProfile }) => {
+const UserBoarder = ({ user, selectedUser, loggedInUsers, openProfile }) => {
     const formatDate = DayDate; 
-    const loggedInUsers = useSelector(state => state.user.loggedInUsers);
     const [isConnectedUser, setIsConnectedUser] = useState(false);
     const [profilePicture, setProfilePicture] = useState(null);
 
@@ -17,16 +14,18 @@ const UserBoarder = ({ user, selectedUser, openProfile }) => {
 
     const loadProfilePicture = () => {
         if (user && user.ProfilePicture) {
-            import(`../../../../assets/connexion/profilePictures/${user.ProfilePicture}`)
+            import(`../../../assets/connexion/profilePictures/${user.ProfilePicture}`)
                 .then(image => {
                     setProfilePicture(image.default);
                 })
                 .catch(error => console.error('Error loading profile picture:', error));
         }
     };
+    
+    // Appeler loadProfilePicture lorsque user change
     useEffect(() => {
         loadProfilePicture();
-    }, [selectedUser]); // Appel loadProfilePicture lorsque user change
+    }, [selectedUser]);
 
     return (
         <div className='userBoarder_container'>

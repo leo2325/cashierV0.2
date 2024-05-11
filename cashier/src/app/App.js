@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import TopNav from '../components/navs/TopNav';
+import UserNav from '../components/navs/UserNav';
 import Home from '../components/Home';
 import UserPage from '../pages/UserPage';
 import { Provider } from 'react-redux';
@@ -27,7 +27,7 @@ function App() {
     <div className="App">
       <Provider store={store}> {/* Fournissez votre store Redux */}
         <BrowserRouter>
-          <TopNav toggleConnexionModule={toggleConnexionModule} isLoggedIn={isLoggedIn} />
+          <UserNav toggleConnexionModule={toggleConnexionModule} isLoggedIn={isLoggedIn} />
         
           <div id="main_container">
             {isConnexionModuleVisible && <UserPage onSuccessfulLogin={handleSuccessfulLogin} />}

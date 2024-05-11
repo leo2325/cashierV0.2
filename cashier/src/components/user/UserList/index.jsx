@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { teamDatas } from '../../../../datas/teamDatas';
-import sortUsersByLog from '../../../../utils/sortByLog';
+import { teamDatas } from '../../../datas/teamDatas';
+import sortUsersByLog from '../../../utils/sortByLog';
 
 import './index.css';
 
-const UsersList = ({ selectedUser, setSelectedUser }) => {
+const UsersList = ({ selectedUser, loggedInUser, loggedInUsers, setSelectedUser }) => {
+    
     const [selectedUserId, setSelectedUserId] = useState(null);// Récupération de l'id utilisateur séléctionné
-    const loggedInUsers = useSelector(state => state.user.loggedInUsers);// Tableau utilisateurs connectés
-    const loggedInUser = useSelector(state => state.user.isLoggedIn);
-
-    // Fonction de tri des utilisateurs
     const usersSortedByLog = sortUsersByLog(teamDatas, loggedInUsers);
 
     const handleSelectUser = async () => {
@@ -18,7 +15,6 @@ const UsersList = ({ selectedUser, setSelectedUser }) => {
         const clickedUser = loggedInUsers.find(user => user.id === selectedUserId);
         if (clickedUser) {
             setSelectedUser(clickedUser);
-            
             console.log('selectedUser', clickedUser);
         } else if (!loggedInUser) {
             const user = teamDatas.find(user => user.id === selectedUserId);

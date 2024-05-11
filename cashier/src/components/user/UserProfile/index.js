@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import DayDate from '../../../utils/getDayDate';
+import React from 'react';
 import './index.css';
 
 const UserProfile = ({ user, selectedUser }) => {
-    const formatDate = DayDate;
 
     return (
         <div className='userProfile_container'>
